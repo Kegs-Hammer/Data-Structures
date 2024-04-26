@@ -129,7 +129,7 @@
 				list += ptr.data; //Add the data of the ptr node in the list string
 				if(ptr.next != null ) //If the next data of the ptr node is not null
 				{
-					list += ", "; //Add a ', ' in the list 
+					list += " -> "; //Add a ', ' in the list 
 				}
 
 				ptr = ptr.next; //Move the ptr to its next node 

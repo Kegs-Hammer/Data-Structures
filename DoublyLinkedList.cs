@@ -237,7 +237,7 @@
 		}
 
 		//Print the list in console in [a, b, c] format
-		public string ShowList()
+		public string ToString()
 		{
 			Node ptr = head; //Create a new node and set it to head 
 			string list = "["; //Open the list string

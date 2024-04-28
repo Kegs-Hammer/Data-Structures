@@ -11,8 +11,16 @@
 		}
 		
 		//Instance variable
-		private Node head = null;
-		private Node tail = null;
+		private Node head;
+		private Node tail;
+		private int count;
+
+		public SinglyLinkedList() 
+		{
+			head = null;
+			tail = null;
+			count = 0;
+		}
 
 		//Add an element at the front of the list 
 		public void	AddFirst(object o)
@@ -60,27 +68,13 @@
 
 		//Retrieve the object present in the tail
 		public object GetLast()
-		{
-			/*if (head == null) //Check if it is an empty list
+		{ 
+			if(tail != null) //Check if it is an empty list 
 			{
-				return null;
+				return tail.data; //Return the data present in the tail
 			}
 
-			Node ptr = head; //Create a pointer node and set it to head
-
-			while(ptr.data != null) //Loop till the next node data of the pointer is null
-			{
-				ptr = ptr.next; //Move the pointer to the next node
-			}
-
-			return ptr.data; //Return the data present in the pointer*/
-
-			if(tail != null)
-			{
-				return tail.data;
-			}
-
-			return null;
+			return null; //If the list is empty, return null
 		}
 		
 		//Remove the first element (head) of the list 
@@ -119,8 +113,27 @@
 			return false; //Return false if the requested data is not in the list
 		}
 
+		//Counts the length of the list
+		public int Count()
+		{
+			count = 0;
+
+			Node ptr = head; //Set a pointer node to head
+			while (ptr != null)  //Iterate through the list
+			{
+				if(ptr.data != null) //Check if the current node's data is not null
+				{
+					count++; //Increment count
+				}
+
+				ptr = ptr.next; //Move the pointer to the next node 
+			}
+
+			return count; //Return count
+		}
+
 		//Print the list in console in [a, b, c] format
-		public string ShowList()
+		public string ToString()
 		{
 			Node ptr = head; //Create a new node and set it to head 
 			string list = "["; //Open the list string
